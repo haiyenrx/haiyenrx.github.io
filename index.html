@@ -3,21 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hai-Yen Dao · Pharmacology Researcher</title>
-  <meta name="description" content="Hai-Yen Dao, MSc in Pharmacology. Research in anticancer drug discovery, target identification, and mechanism-of-action studies in radioresistant breast cancer.">
-  <meta name="author" content="Hai-Yen Dao">
+  <title>Hai Yen Dao · Pharmacology Researcher</title>
+  <meta name="description" content="Hai Yen Dao, MSc in Pharmacology. Research in anticancer drug discovery, target identification, and mechanism-of-action studies in radioresistant breast cancer.">
+  <meta name="author" content="Hai Yen Dao">
   <link rel="canonical" href="https://haiyenrx.github.io/">
   <meta property="og:type" content="profile">
-  <meta property="og:title" content="Hai-Yen Dao · Pharmacology Researcher">
+  <meta property="og:title" content="Hai Yen Dao · Pharmacology Researcher">
   <meta property="og:description" content="Anticancer drug discovery, target identification, and mechanism-of-action studies in radioresistant breast cancer.">
   <meta property="og:url" content="https://haiyenrx.github.io/">
-  <meta name="theme-color" content="#f4f6fb">
+  <meta name="theme-color" content="#0a1020">
   <script>
     /* Apply the saved theme before first paint to avoid a flash of the wrong colors. */
     (function () {
       var t = null;
       try { t = localStorage.getItem("theme"); } catch (e) {}
-      if (t !== "light" && t !== "navy" && t !== "pink" && t !== "lavender" && t !== "midnight") t = "light";
+      if (t !== "navy" && t !== "lavender") {
+        if (t !== null) { try { localStorage.setItem("theme", "navy"); } catch (e) {} }
+        t = "navy";
+      }
       document.documentElement.setAttribute("data-theme", t);
     })();
   </script>
@@ -35,32 +38,8 @@
        Each theme pairs a primary accent with a secondary accent for gradients.
        --accent-ink is a darker/lighter variant used for text on --accent-soft. */
 
-    /* Light: deep teal + indigo on cool porcelain */
-    :root, [data-theme="light"] {
-      --bg: #f4f6fb;
-      --surface: #ffffff;
-      --text: #111a2e;
-      --muted: #536079;
-      --line: #e1e6f0;
-      --accent: #0d7a72;
-      --accent-2: #4f46e5;
-      --accent-ink: #0a5c56;
-      --accent-soft: #e2f3f0;
-      --highlight: #c2410c;
-      --on-accent: #ffffff;
-      --chip: #f1f4fa;
-      --nav-bg: rgba(244, 246, 251, .82);
-      --glow-1: rgba(13, 122, 114, .18);
-      --glow-2: rgba(79, 70, 229, .16);
-      --name-from: #111a2e;
-      --name-to: #0d7a72;
-      --shadow-sm: 0 1px 2px rgba(17, 26, 46, .04), 0 4px 14px rgba(17, 26, 46, .05);
-      --shadow-md: 0 2px 6px rgba(17, 26, 46, .06), 0 16px 36px rgba(17, 26, 46, .10);
-      color-scheme: light;
-    }
-
-    /* Navy: midnight with electric blue + violet */
-    [data-theme="navy"] {
+    /* Navy (default): deep navy with electric blue + violet */
+    :root, [data-theme="navy"] {
       --bg: #0a1020;
       --surface: #111a30;
       --text: #e9eef8;
@@ -81,31 +60,6 @@
       --shadow-sm: 0 1px 2px rgba(0, 0, 0, .3), 0 4px 14px rgba(0, 0, 0, .22);
       --shadow-md: 0 2px 6px rgba(0, 0, 0, .35), 0 18px 40px rgba(0, 0, 0, .40);
       color-scheme: dark;
-    }
-
-    /* Pastel Pink: rose + lavender on blush */
-    [data-theme="pink"] {
-      --bg: #fff6f9;
-      --surface: #ffffff;
-      --text: #2a1520;
-      --muted: #74566a;
-      --line: #f3dae4;
-      --accent: #c2185b;
-      --accent-2: #7c4dff;
-      --accent-ink: #9d174d;
-      --accent-soft: #fde5ef;
-      --highlight: #6d28d9;
-      --badge-3: #d9480f; /* coral: --highlight is too close to --accent-2 here */
-      --on-accent: #ffffff;
-      --chip: #fff0f5;
-      --nav-bg: rgba(255, 246, 249, .82);
-      --glow-1: rgba(236, 72, 153, .20);
-      --glow-2: rgba(124, 77, 255, .16);
-      --name-from: #2a1520;
-      --name-to: #c2185b;
-      --shadow-sm: 0 1px 2px rgba(42, 21, 32, .04), 0 4px 14px rgba(194, 24, 91, .06);
-      --shadow-md: 0 2px 6px rgba(42, 21, 32, .06), 0 16px 36px rgba(194, 24, 91, .12);
-      color-scheme: light;
     }
 
     /* Lavender: soft violet + periwinkle on lilac mist */
@@ -132,36 +86,7 @@
       color-scheme: light;
     }
 
-    /* Midnight: daylight gold + sky blue on near-black, with a six-color set where each
-       card/pill takes ONE solid color as a soft tint (palette from tuedsci.github.io dark mode). */
-    [data-theme="midnight"] {
-      --bg: #0c1018;
-      --surface: #131a25;
-      --text: #f2f5fa;
-      --muted: #97a3b4;
-      --line: #263140;
-      --accent: #fbbf24;      /* daylight gold */
-      --accent-2: #38bdf8;    /* sky blue */
-      --accent-ink: #fcd34d;
-      --accent-soft: rgba(251, 191, 36, .12);
-      --highlight: #f472b6;
-      --badge-3: #f472b6;
-      --on-accent: #0c1018;
-      --chip: #182131;
-      --nav-bg: rgba(12, 16, 24, .82);
-      --glow-1: rgba(251, 191, 36, .10);
-      --glow-2: rgba(56, 189, 248, .10);
-      --name-from: #ffffff;
-      --name-to: #ffffff;
-      --shadow-sm: 0 1px 2px rgba(0, 0, 0, .3), 0 4px 14px rgba(0, 0, 0, .22);
-      --shadow-md: 0 2px 6px rgba(0, 0, 0, .35), 0 18px 40px rgba(0, 0, 0, .40);
-      --sk-1: #58a6ff; --sk-2: #fbbf24; --sk-3: #34d399; --sk-4: #f472b6; --sk-5: #38bdf8; --sk-6: #fb923c;
-      color-scheme: dark;
-    }
-
     :root { --grad: linear-gradient(120deg, var(--accent), var(--accent-2)); }
-    /* Solid gold instead of a gradient: strips, heading bars, publication numbers */
-    html[data-theme="midnight"] { --grad: linear-gradient(var(--sk-2), var(--sk-2)); }
 
     *, *::before, *::after { box-sizing: border-box; }
 
@@ -311,10 +236,7 @@
     .theme-options .check { margin-left: auto; width: .9rem; height: .9rem; visibility: hidden; }
     .theme-options button[aria-checked="true"] .check { visibility: visible; }
     .swatch { width: 1rem; height: 1rem; border-radius: 50%; flex: none; box-shadow: inset 0 0 0 1px rgba(127, 127, 127, .35); }
-    .swatch.light { background: conic-gradient(from 200deg, #0d7a72, #4f46e5, #f4f6fb 75%, #0d7a72); }
     .swatch.navy { background: conic-gradient(from 200deg, #5eb1ff, #a78bfa, #0a1020 75%, #5eb1ff); }
-    .swatch.pink { background: conic-gradient(from 200deg, #c2185b, #7c4dff, #fde5ef 75%, #c2185b); }
-    .swatch.midnight { background: conic-gradient(from 200deg, #fbbf24, #38bdf8, #0c1018 75%, #fbbf24); }
     .swatch.lavender { background: conic-gradient(from 200deg, #6d4fc2, #4f7be0, #ede8fb 75%, #6d4fc2); }
 
     /* ---------- Sections ---------- */
@@ -433,44 +355,6 @@
     }
     .chips li:hover { border-color: var(--accent); color: var(--accent-ink); }
 
-    /* Midnight: one color per skill card (its chips share it), one color per contact pill.
-       Tint recipe: ~13% fill, ~32% border, text mixed 72% toward --text for contrast. */
-    [data-theme="midnight"] .skills .card:nth-child(6n+1) { --c: var(--sk-1); }
-    [data-theme="midnight"] .skills .card:nth-child(6n+2) { --c: var(--sk-2); }
-    [data-theme="midnight"] .skills .card:nth-child(6n+3) { --c: var(--sk-3); }
-    [data-theme="midnight"] .skills .card:nth-child(6n+4) { --c: var(--sk-4); }
-    [data-theme="midnight"] .skills .card:nth-child(6n+5) { --c: var(--sk-5); }
-    [data-theme="midnight"] .skills .card:nth-child(6n)   { --c: var(--sk-6); }
-    [data-theme="midnight"] .skills .card h3 { color: color-mix(in srgb, var(--c) 80%, var(--text)); }
-    [data-theme="midnight"] .skills .card:hover { border-color: color-mix(in srgb, var(--c) 55%, var(--line)); }
-    [data-theme="midnight"] .chips li {
-      background: color-mix(in srgb, var(--c) 13%, var(--surface));
-      border-color: color-mix(in srgb, var(--c) 32%, var(--surface));
-      color: color-mix(in srgb, var(--c) 72%, var(--text));
-    }
-    [data-theme="midnight"] .chips li:hover {
-      background: color-mix(in srgb, var(--c) 22%, var(--surface));
-      border-color: color-mix(in srgb, var(--c) 32%, var(--surface));
-      color: var(--text);
-    }
-
-    [data-theme="midnight"] .contact li:nth-child(1) { --c: var(--sk-6); }
-    [data-theme="midnight"] .contact li:nth-child(2) { --c: var(--sk-1); }
-    [data-theme="midnight"] .contact li:nth-child(3) { --c: var(--sk-3); }
-    [data-theme="midnight"] .contact a, [data-theme="midnight"] .contact a.primary, [data-theme="midnight"] .contact .tag {
-      background: color-mix(in srgb, var(--c) 13%, var(--surface));
-      border-color: color-mix(in srgb, var(--c) 32%, var(--surface));
-      color: color-mix(in srgb, var(--c) 72%, var(--text));
-      box-shadow: none;
-    }
-    [data-theme="midnight"] .contact a:hover, [data-theme="midnight"] .contact a.primary:hover {
-      background: color-mix(in srgb, var(--c) 22%, var(--surface));
-      color: var(--text); filter: none;
-    }
-
-    /* Gold eyebrow, like the reference's subtitle */
-    [data-theme="midnight"] .eyebrow { color: var(--accent-ink); background: var(--accent-soft); }
-
     /* Awards */
     .note { font-size: .93rem; font-style: italic; color: var(--muted); margin-bottom: 1rem; }
     ul.awards { list-style: none; margin: 0; padding: 0; }
@@ -524,7 +408,7 @@
         --accent: #0d7a72; --accent-2: #0d7a72; --accent-ink: #0a5c56; --accent-soft: #fff; --chip: #fff;
         --highlight: #c2410c; --on-accent: #fff; --glow-1: transparent; --glow-2: transparent;
         --shadow-sm: none; --shadow-md: none;
-        --badge-3: #c2410c; --sk-1: #0d7a72; --sk-2: #0d7a72; --sk-3: #0d7a72; --sk-4: #0d7a72; --sk-5: #0d7a72; --sk-6: #0d7a72;
+        --badge-3: #c2410c;
       }
       .site-nav, .skip-link, .hero-art { display: none; }
       body { font-size: 10.5pt; }
@@ -573,7 +457,7 @@
     </svg>
     <div class="wrap">
       <p class="eyebrow">MSc in Pharmacology</p>
-      <h1>Hai-Yen Dao</h1>
+      <h1>Hai Yen Dao</h1>
       <p class="tagline">Pharmacology researcher in anticancer drug discovery, target identification, and mechanism-of-action studies.</p>
       <ul class="contact" aria-label="Contact">
         <li>
@@ -611,16 +495,13 @@
     </ul>
     <div class="theme-menu">
       <button type="button" class="theme-toggle" id="theme-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="theme-options">
-        <span class="swatch light" id="theme-current" aria-hidden="true"></span>
-        <span class="visually-hidden">Color theme: </span><span id="theme-name" class="visually-hidden">Light</span>
+        <span class="swatch navy" id="theme-current" aria-hidden="true"></span>
+        <span class="visually-hidden">Color theme: </span><span id="theme-name" class="visually-hidden">Navy</span>
         <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
       </button>
       <ul class="theme-options" id="theme-options" role="menu" aria-labelledby="theme-toggle" hidden>
-        <li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-set-theme="light"><span class="swatch light" aria-hidden="true"></span>Light<svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></li>
-        <li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-set-theme="lavender"><span class="swatch lavender" aria-hidden="true"></span>Lavender<svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></li>
-        <li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-set-theme="pink"><span class="swatch pink" aria-hidden="true"></span>Pastel Pink<svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></li>
         <li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-set-theme="navy"><span class="swatch navy" aria-hidden="true"></span>Navy<svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></li>
-        <li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-set-theme="midnight"><span class="swatch midnight" aria-hidden="true"></span>Midnight<svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></li>
+        <li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-set-theme="lavender"><span class="swatch lavender" aria-hidden="true"></span>Lavender<svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></li>
       </ul>
     </div>
     </div>
@@ -657,7 +538,7 @@
           <h3>BSc in Chemical Engineering and Technology</h3>
           <span class="date">2018 – 2022</span>
         </div>
-        <p class="meta">University of Science, Vietnam National University · Vietnam</p>
+        <p class="meta">Hanoi University of Science, Vietnam National University · Vietnam</p>
         <ul class="facts">
           <li>GPA 3.36 / 4.0</li>
           <li>Thesis 9.6 / 10</li>
@@ -688,10 +569,10 @@
 
       <article class="card accented">
         <div class="card-head">
-          <h3>Undergraduate Research Assistant</h3>
-          <span class="date">Sep 2020 – Jun 2022</span>
+          <h3>Research Assistant</h3>
+          <span class="date">Sep 2020 – Jul 2022</span>
         </div>
-        <p class="meta">Laboratory of Petroleum Chemistry, University of Science, Vietnam National University · Vietnam</p>
+        <p class="meta">Laboratory of Petroleum Chemistry, Hanoi University of Science, Vietnam National University · Vietnam</p>
         <ul class="points">
           <li>Developed heterogeneous catalysts containing transition-metal nanoparticles supported on microporous and mesoporous materials for the conversion of organic compounds.</li>
           <li>Synthesized a CuTiO<sub>3</sub> catalyst and applied it to isoeugenol oxidation, forming the basis of the BSc thesis.</li>
@@ -707,7 +588,7 @@
         <li class="card">
           <p class="pub-title">Advantages of single high-dose radiation therapy compared with conventional fractionated radiation therapy in overcoming radioresistance.</p>
           <p class="pub-authors">Kwon YS, Nguyen PA, <strong>Dao HY</strong>, Jang H, Kim SY.</p>
-          <p class="pub-venue"><em>International Journal of Radiation Biology</em>. 2025;10(1):44–55.</p>
+          <p class="pub-venue"><em>International Journal of Radiation Biology</em>. 2025;101(1):44–55. doi:10.1080/09553002.2024.2418493.</p>
           <div class="badges"><span class="badge status">Published</span><span class="badge">Co-author</span></div>
         </li>
         <li class="card">
@@ -731,7 +612,7 @@
           <ul class="chips"><li>MTT</li><li>SRB</li><li>Colony formation</li><li>Cell cycle analysis</li><li>Cell culture</li></ul>
         </div>
         <div class="card">
-          <h3>Target identification &amp; validation</h3>
+          <h3>Target identification</h3>
           <ul class="chips"><li>DARTS</li><li>Immunoprecipitation (IP/Co-IP)</li><li>siRNA transfection</li></ul>
         </div>
         <div class="card">
@@ -762,9 +643,9 @@
       <p class="note">All awards listed below are merit-based.</p>
       <ul class="awards">
         <li><span class="award-name">SRDm Scholarship for Research &amp; Development</span><span class="date">2023 – 2026</span><span class="award-by">Dongguk University</span></li>
-        <li><span class="award-name">Award for Excellent Academic Results and Leadership</span><span class="date">2022</span><span class="award-by">University of Science</span></li>
+        <li><span class="award-name">Award for Excellent Academic Results and Leadership</span><span class="date">2022</span><span class="award-by">Vietnam National University</span></li>
         <li><span class="award-name">Five-Good Student Award</span><span class="date">2021</span><span class="award-by">Vietnam Students' Association</span></li>
-        <li><span class="award-name">Encouragement Scholarship for Outstanding Academic Performance (×3)</span><span class="date">2018 – 2022</span><span class="award-by">University of Science</span></li>
+        <li><span class="award-name">Scholarship for Outstanding Academic Performance (×3)</span><span class="date">2018 – 2022</span><span class="award-by">Vietnam National University</span></li>
         <li><span class="award-name">Valedictorian</span><span class="date">2018</span><span class="award-by">Thai Phien High School</span></li>
       </ul>
     </section>
@@ -787,7 +668,7 @@
 
   <footer>
     <div class="wrap">
-      <span>© 2026 Hai-Yen Dao</span>
+      <span>© 2026 Hai Yen Dao</span>
       <a href="mailto:haiyenrx@gmail.com">haiyenrx@gmail.com</a>
     </div>
   </footer>
@@ -797,8 +678,8 @@
     (function () {
       var root = document.documentElement;
       var meta = document.querySelector('meta[name="theme-color"]');
-      var colors = { light: "#f4f6fb", navy: "#0a1020", pink: "#fff6f9", lavender: "#f7f5fd", midnight: "#0c1018" };
-      var names = { light: "Light", navy: "Navy", pink: "Pastel Pink", lavender: "Lavender", midnight: "Midnight" };
+      var colors = { navy: "#0a1020", lavender: "#f7f5fd" };
+      var names = { navy: "Navy", lavender: "Lavender" };
       var toggle = document.getElementById("theme-toggle");
       var menu = document.getElementById("theme-options");
       var current = document.getElementById("theme-current");
@@ -852,7 +733,7 @@
         if (!menu.hidden && !e.target.closest(".theme-menu")) close(false);
       });
 
-      apply(root.getAttribute("data-theme") || "light");
+      apply(colors[root.getAttribute("data-theme")] ? root.getAttribute("data-theme") : "navy");
     })();
 
     /* Scroll-spy: highlight the nav link for the section currently in view */

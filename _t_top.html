@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dao Hai Yen · Pharmacology Researcher</title>
+  <meta name="description" content="Dao Hai Yen, MSc in Pharmacology. Research in anticancer drug discovery, target identification, and mechanism-of-action studies in radioresistant breast cancer.">
+  <meta name="author" content="Dao Hai Yen">
+  <link rel="canonical" href="https://haiyenrx.github.io/">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Dao Hai Yen · Pharmacology Researcher">
+  <meta property="og:description" content="Anticancer drug discovery, target identification, and mechanism-of-action studies in radioresistant breast cancer.">
+  <meta property="og:url" content="https://haiyenrx.github.io/">
+  <meta name="theme-color" content="#fbfaf7">
+  <script>
+    /* Apply the saved theme before first paint to avoid a flash of the wrong colors. */
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("theme"); } catch (e) {}
+      if (t !== "light" && t !== "navy" && t !== "pink") t = "pink";
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f5f5b'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-size='30' fill='%23fff'%3EHY%3C/text%3E%3C/svg%3E">
+  <style>
+    :root {
+      --radius: 14px;
+      --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --max: 880px;
+    }
+
+    /* Themes */
+    :root, [data-theme="light"] {
+      --bg: #fbfaf7;
+      --surface: #ffffff;
+      --text: #1d2321;
+      --muted: #5b6662;
+      --line: #e4e1da;
+      --accent: #1f5f5b;
+      --accent-soft: #e6f0ee;
+      --highlight: #8a4b1f;
+      --nav-bg: rgba(251, 250, 247, .9);
+      color-scheme: light;
+    }
+    [data-theme="navy"] {
+      --bg: #0f1a2e;
+      --surface: #16233d;
+      --text: #e7ecf5;
+      --muted: #a6b2c8;
+      --line: #26365a;
+      --accent: #8fb8ff;
+      --accent-soft: #1c2d4f;
+      --highlight: #f0c27a;
+      --nav-bg: rgba(15, 26, 46, .9);
+      color-scheme: dark;
+    }
+    [data-theme="pink"] {
+      --bg: #fff6f8;
+      --surface: #ffffff;
+      --text: #2b1f24;
+      --muted: #6e5a62;
+      --line: #f1dbe2;
+      --accent: #b4466e;
+      --accent-soft: #fbe4ec;
+      --highlight: #7a4fa0;
+      --nav-bg: rgba(255, 246, 248, .9);
+      color-scheme: light;
+    }
+
+    body, .card, .site-nav, .contact a, .contact .tag { transition: background-color .25s, color .25s, border-color .25s; }
+    @media (prefers-reduced-motion: reduce) {
+      body, .card, .site-nav, .contact a, .contact .tag { transition: none; }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 1.0625rem;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a { color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+    a:hover { text-decoration-thickness: 2px; }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+    .skip-link {
+      position: absolute; left: 1rem; top: -3rem;
+      background: var(--accent); color: var(--bg);
+      padding: .5rem 1rem; border-radius: 8px; z-index: 100;
+      text-decoration: none; font-weight: 600;
+    }
+    .skip-link:focus { top: 1rem; }
+
+    .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 1.25rem; }
+
+    /* Header */
+    .hero { padding: 4.5rem 0 2.75rem; border-bottom: 1px solid var(--line); }
+    .eyebrow {
+      font-size: .8rem; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--accent); font-weight: 600; margin: 0 0 .75rem;
+    }
+    .hero h1 {
+      font-family: var(--serif); font-weight: 600;
+      font-size: clamp(2.4rem, 6vw, 3.5rem); line-height: 1.1;
+      margin: 0 0 .75rem; letter-spacing: -.01em;
+    }
+    .tagline {
+      font-family: var(--serif); font-size: clamp(1.1rem, 2.4vw, 1.3rem);
+      color: var(--muted); margin: 0 0 1.75rem; max-width: 40rem;
+    }
+    .contact { display: flex; flex-wrap: wrap; gap: .6rem; padding: 0; margin: 0; list-style: none; }
+    .contact a {
+      display: inline-flex; align-items: center; gap: .45rem;
+      padding: .45rem .9rem; border: 1px solid var(--line); border-radius: 999px;
+      background: var(--surface); color: var(--text); text-decoration: none; font-size: .92rem;
+      transition: border-color .2s, color .2s;
+    }
+    .contact a:hover { border-color: var(--accent); color: var(--accent); }
+    .contact .tag {
+      display: inline-flex; align-items: center; gap: .45rem;
+      padding: .45rem .9rem; border: 1px solid var(--line); border-radius: 999px;
+      background: var(--surface); color: var(--muted); font-size: .92rem;
+    }
+    .contact svg { width: 1rem; height: 1rem; flex: none; }
+
+    /* Sticky nav */
+    .site-nav {
+      position: -webkit-sticky; position: sticky; top: 0; z-index: 50;
+      background: var(--nav-bg);
+      backdrop-filter: saturate(160%) blur(10px);
+      -webkit-backdrop-filter: saturate(160%) blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      display: flex; align-items: center; gap: 1rem;
+      max-width: var(--max); margin: 0 auto; padding: 0 1.25rem;
+    }
+    .site-nav ul {
+      display: flex; gap: 1.5rem; margin: 0; padding: .85rem 0;
+      flex: 1; min-width: 0; list-style: none; overflow-x: auto; scrollbar-width: none;
+    }
+    .site-nav ul::-webkit-scrollbar { display: none; }
+
+    /* Theme switcher */
+    .theme-switch {
+      display: flex; gap: .25rem; flex: none;
+      padding: .2rem; border: 1px solid var(--line); border-radius: 999px; background: var(--surface);
+    }
+    .theme-switch button {
+      display: inline-flex; align-items: center; gap: .4rem;
+      border: 0; background: transparent; color: var(--muted);
+      font: inherit; font-size: .8rem; font-weight: 600;
+      padding: .3rem .65rem; border-radius: 999px; cursor: pointer;
+    }
+    .theme-switch button:hover { color: var(--text); }
+    .theme-switch button[aria-pressed="true"] { background: var(--accent-soft); color: var(--accent); }
+    .swatch { width: .8rem; height: .8rem; border-radius: 50%; border: 1px solid rgba(0, 0, 0, .2); flex: none; }
+    .swatch.light { background: linear-gradient(135deg, #fbfaf7 50%, #1f5f5b 50%); }
+    .swatch.navy { background: linear-gradient(135deg, #0f1a2e 50%, #8fb8ff 50%); }
+    .swatch.pink { background: linear-gradient(135deg, #fbe4ec 50%, #b4466e 50%); }
+    .site-nav a {
+      color: var(--muted); text-decoration: none; font-size: .9rem; font-weight: 500; white-space: nowrap;
+    }
+    .site-nav a:hover { color: var(--accent); }
+
+    /* Sections */
+    main section { padding: 3rem 0 1rem; }
+    h2 {
+      font-family: var(--serif); font-weight: 600; font-size: 1.6rem;
+      margin: 0 0 1.5rem; display: flex; align-items: center; gap: .9rem;
+    }
+    h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+    h3 { font-size: 1.1rem; margin: 0; line-height: 1.4; }
+    p { margin: 0 0 1rem; }
+    .lead { font-size: 1.1rem; }
+    .muted { color: var(--muted); }
+
+    .card {
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 1.5rem 1.6rem; margin-bottom: 1.25rem;
+    }
+    .card-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .25rem 1rem; margin-bottom: .35rem; }
+    .date { color: var(--muted); font-size: .92rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .meta { color: var(--muted); font-size: .95rem; margin: 0 0 1rem; }
+    .facts { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 1rem; padding: 0; list-style: none; }
+    .facts li {
+      background: var(--accent-soft); color: var(--accent);
+      border-radius: 999px; padding: .2rem .75rem; font-size: .85rem; font-weight: 600;
+    }
+    .thesis { margin: 0; font-size: .97rem; }
+    .thesis em { font-family: var(--serif); font-size: 1.04rem; }
+
+    ul.points { margin: 0; padding-left: 1.15rem; }
+    ul.points li { margin-bottom: .5rem; padding-left: .2rem; }
+    ul.points li::marker { color: var(--accent); }
+
+    /* Publications */
+    ol.pubs { list-style: none; counter-reset: pub; margin: 0; padding: 0; }
+    ol.pubs li {
+      counter-increment: pub; position: relative;
+      padding: 0 0 1.25rem 2.75rem; margin-bottom: 1.25rem; border-bottom: 1px solid var(--line);
+    }
+    ol.pubs li:last-child { border-bottom: 0; margin-bottom: 0; }
+    ol.pubs li::before {
+      content: counter(pub); position: absolute; left: 0; top: .1rem;
+      width: 1.85rem; height: 1.85rem; border-radius: 50%;
+      display: grid; place-items: center;
+      background: var(--accent-soft); color: var(--accent); font-weight: 700; font-size: .9rem;
+    }
+    .pub-title { font-family: var(--serif); font-size: 1.12rem; margin: 0 0 .3rem; line-height: 1.45; }
+    .pub-authors { margin: 0 0 .3rem; color: var(--muted); font-size: .95rem; }
+    .pub-authors strong { color: var(--text); }
+    .pub-venue { margin: 0 0 .6rem; font-size: .95rem; }
+    .badges { display: flex; flex-wrap: wrap; gap: .4rem; }
+    .badge {
+      font-size: .78rem; font-weight: 600; letter-spacing: .02em;
+      padding: .15rem .6rem; border-radius: 6px; border: 1px solid var(--line); color: var(--muted);
+    }
+    .badge.status { border-color: var(--accent); color: var(--accent); }
+    .badge.first { border-color: var(--highlight); color: var(--highlight); }
+
+    /* Skills */
+    .skills { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; }
+    .skills .card { margin: 0; padding: 1.2rem 1.3rem; }
+    .skills h3 { font-size: .95rem; margin-bottom: .7rem; color: var(--accent); }
+    .chips { display: flex; flex-wrap: wrap; gap: .4rem; margin: 0; padding: 0; list-style: none; }
+    .chips li {
+      font-size: .87rem; padding: .2rem .6rem; border-radius: 6px;
+      background: var(--bg); border: 1px solid var(--line);
+    }
+
+    /* Awards */
+    .note { font-size: .93rem; font-style: italic; color: var(--muted); margin-bottom: 1rem; }
+    ul.awards { list-style: none; margin: 0; padding: 0; }
+    ul.awards li {
+      display: grid; grid-template-columns: 1fr auto; gap: .15rem 1.25rem;
+      padding: 1rem 0; border-bottom: 1px solid var(--line);
+    }
+    ul.awards li:first-child { padding-top: 0; }
+    ul.awards li:last-child { border-bottom: 0; }
+    .award-name { font-weight: 600; }
+    .award-by { grid-column: 1; color: var(--muted); font-size: .95rem; }
+    ul.awards .date { grid-column: 2; grid-row: 1; text-align: right; }
+
+    /* References */
+    .refs { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+    .refs .card { margin: 0; }
+    .refs p { margin: .35rem 0 0; color: var(--muted); font-size: .95rem; }
+
+    footer { border-top: 1px solid var(--line); margin-top: 3rem; padding: 2rem 0 3rem; color: var(--muted); font-size: .9rem; }
+    footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem; }
+
+    @media (max-width: 600px) {
+      body { font-size: 1rem; }
+      .hero { padding: 3rem 0 2rem; }
+      .nav-inner { gap: .75rem; }
+      .site-nav ul { gap: 1.1rem; }
+      .theme-switch button { padding: .35rem; }
+      .theme-switch .label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+      .swatch { width: 1rem; height: 1rem; }
+      .card { padding: 1.2rem 1.15rem; }
+      main section { padding-top: 2.25rem; }
+      ol.pubs li { padding-left: 2.4rem; }
+      ul.awards li { grid-template-columns: 1fr; }
+      ul.awards .date { grid-column: 1; grid-row: auto; text-align: left; }
+    }
+
+    @media print {
+      :root, [data-theme] { --bg: #fff; --surface: #fff; --text: #000; --muted: #444; --line: #ccc; --accent: #1f5f5b; --accent-soft: #fff; --highlight: #8a4b1f; }
+      .site-nav, .skip-link { display: none; }
+      body { font-size: 10.5pt; }
+      .hero { padding: 0 0 1rem; }
+      .card, ol.pubs li, ul.awards li { break-inside: avoid; }
+      .contact a { border: 0; padding: 0 .5rem 0 0; }
+      a { color: inherit; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">MSc in Pharmacology</p>
+      <h1>Dao Hai Yen</h1>
+      <p class="tagline">Pharmacology researcher in anticancer drug discovery, target identification, and mechanism-of-action studies.</p>
+      <ul class="contact" aria-label="Contact">
+        <li>
+          <a href="mailto:haiyenrx@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            haiyenrx@gmail.com
+          </a>
+        </li>
+        <li>
+          <a href="https://linkedin.com/in/haiyenrx/" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C21.6 8.65 22 11.3 22 14.7V21h-4v-5.6c0-1.33-.03-3.05-1.86-3.05-1.86 0-2.14 1.45-2.14 2.95V21h-4V9Z"/></svg>
+            LinkedIn
+          </a>
+        </li>
+        <li>
+          <span class="tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+            <span><span class="visually-hidden">Location: </span>Vietnam</span>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <nav class="site-nav" aria-label="Sections">
+    <div class="nav-inner">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#awards">Awards</a></li>
+      <li><a href="#references">References</a></li>
+    </ul>
+    <div class="theme-switch" role="group" aria-label="Color theme">
+      <button type="button" data-set-theme="light" aria-pressed="false" title="Light theme"><span class="swatch light" aria-hidden="true"></span><span class="label">Light</span></button>
+      <button type="button" data-set-theme="navy" aria-pressed="false" title="Navy theme"><span class="swatch navy" aria-hidden="true"></span><span class="label">Navy</span></button>
+      <button type="button" data-set-theme="pink" aria-pressed="false" title="Pastel Pink theme"><span class="swatch pink" aria-hidden="true"></span><span class="label">Pastel Pink</span></button>
+    </div>
+    </div>
+  </nav>
+
+  <main id="main" class="wrap">
+    <section id="about" aria-labelledby="about-h">
+      <h2 id="about-h">About</h2>
+      <p class="lead">Pharmacology researcher with 2.5 years of graduate laboratory experience in anticancer drug discovery, target identification, and mechanism-of-action studies, complemented by 2 years of undergraduate research in heterogeneous catalysis and chemical engineering.</p>
+      <p>Graduate research focused on developing novel anticancer agents for radioresistant breast cancer, including the identification and characterization of small-molecule compounds targeting long-chain acyl-CoA synthetase 4 (ACSL4). Proficient in DARTS, IP/Co-IP, siRNA knockdown, Western blotting, RT-PCR, and immunofluorescence, backed by an MSc in Pharmacology.</p>
+      <p>Seeking a PhD position in molecular oncology or cancer pharmacology focused on drug response and resistance, target validation, and the preclinical evaluation of novel therapeutic strategies.</p>
+    </section>
+
+    <section id="education" aria-labelledby="education-h">
+      <h2 id="education-h">Education</h2>
+
+      <article class="card">
+        <div class="card-head">
+          <h3>MSc in Pharmacology</h3>
+          <span class="date">2023 – 2026</span>
+        </div>
+        <p class="meta">Dongguk University, College of Medicine · South Korea</p>
+        <ul class="facts">
+          <li>GPA 4.06 / 4.5</li>
+          <li>SRDm Scholarship</li>
+        </ul>
+        <p class="thesis"><strong>Thesis:</strong> <em>Discovery of durumamide D as a novel ACSL4 inhibitor for radioresistant breast cancer.</em> <span class="muted">Supervisor: Prof. Soyoung Kim</span></p>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <h3>BSc in Chemical Engineering and Technology</h3>
+          <span class="date">2018 – 2022</span>
+        </div>
+        <p class="meta">VNU University of Science, Vietnam National University · Vietnam</p>
+        <ul class="facts">
+          <li>GPA 3.36 / 4.0</li>
+          <li>Thesis 9.6 / 10</li>
+          <li>Top 5 of cohort</li>
+        </ul>
+        <p class="thesis"><strong>Thesis:</strong> <em>The CuTiO<sub>3</sub> catalyst in the isoeugenol oxidation reaction.</em> <span class="muted">Supervisor: Prof. Nguyen Thi Minh Thu</span></p>
+      </article>
+    </section>
+
+    <section id="experience" aria-labelledby="experience-h">
+      <h2 id="experience-h">Research Experience</h2>
+
+      <article class="card">
+        <div class="card-head">
+          <h3>Graduate Researcher at Dongguk University</h3>
+          <span class="date">Sep 2023 – Feb 2026</span>
+        </div>
+        <p class="meta">Laboratory of Pharmacology, College of Medicine · Gyeongju, South Korea</p>
+        <ul class="points">
+          <li>Screened candidate compounds for anticancer activity using MTT, SRB, and colony formation assays.</li>
+          <li>Investigated durumamide D, a novel microbial metabolite, as a potential ACSL4 inhibitor in radioresistant breast cancer, forming the basis of the MSc thesis.</li>
+          <li>Examined direct binding between durumamide D and ACSL4 using DARTS and characterized protein–protein interactions by IP/Co-IP, supporting the identification and validation of ACSL4 as a molecular target.</li>
+          <li>Validated target dependence and characterized the mechanism of action through siRNA-mediated ACSL4 knockdown and cell cycle analysis.</li>
+          <li>Analyzed gene and protein expression using RT-PCR and Western blotting, and investigated protein subcellular localization by immunofluorescence.</li>
+          <li>Contributed to 3 manuscripts: 1 published, 1 under revision, and 1 in preparation as first author.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <h3>Undergraduate Research Assistant at VNU University of Science</h3>
+          <span class="date">Sep 2020 – Jun 2022</span>
+        </div>
+        <p class="meta">Laboratory of Petroleum Chemistry · Hanoi, Vietnam</p>
+        <ul class="points">
+          <li>Developed heterogeneous catalysts containing transition-metal nanoparticles supported on microporous and mesoporous materials for the conversion of organic compounds.</li>
+          <li>Synthesized a CuTiO<sub>3</sub> catalyst and applied it to isoeugenol oxidation, forming the basis of the BSc thesis.</li>
+          <li>Characterized materials and reaction products with 5 analytical techniques (GC-MS, FT-IR, UV-Vis, XRD, and SEM).</li>
+          <li>Presented findings at the Faculty of Chemistry Scientific Conference (April 2021) and helped prepare research reports and manuscripts.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="publications" aria-labelledby="publications-h">
+      <h2 id="publications-h">Publications</h2>
+      <ol class="pubs">
+        <li>
+          <p class="pub-title">Advantages of single high-dose radiation therapy compared with conventional fractionated radiation therapy in overcoming radioresistance.</p>
+          <p class="pub-authors">Kwon YS, Nguyen PA, <strong>Dao HY</strong>, Jang H, Kim SY.</p>
+          <p class="pub-venue"><em>International Journal of Radiation Biology</em>. 2025;101(1):44–55. doi:10.1080/09553002.2024.2418493.</p>
+          <div class="badges"><span class="badge status">Published</span><span class="badge">Co-author</span></div>
+        </li>
+        <li>
+          <p class="pub-title">Discovery of a novel function of luteolin as a MAP4K4 inhibitor.</p>
+          <p class="pub-authors">Nguyen PA, Kwon YS, Kim NY, Lee MG, <strong>Dao HY</strong>, Kim GJ, Kim SY.</p>
+          <div class="badges"><span class="badge status">Under revision</span><span class="badge">Co-author</span></div>
+        </li>
+        <li>
+          <p class="pub-title">5-Fluorouracil directly targets ACSL4 to induce apoptosis in radioresistant breast cancer cells.</p>
+          <p class="pub-authors"><strong>Dao HY</strong>, Kwon YS, Kim NY, Hwang IH, Kim SY.</p>
+          <div class="badges"><span class="badge status">In preparation</span><span class="badge first">First author</span></div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-h">
+      <h2 id="skills-h">Skills</h2>
+      <div class="skills">
+        <div class="card">
+          <h3>Cell-based assays</h3>
+          <ul class="chips"><li>MTT</li><li>SRB</li><li>Colony formation</li><li>Cell cycle analysis</li><li>Cell culture</li></ul>
+        </div>
+        <div class="card">
+          <h3>Target identification &amp; validation</h3>
+          <ul class="chips"><li>DARTS</li><li>Immunoprecipitation (IP/Co-IP)</li><li>siRNA transfection</li></ul>
+        </div>
+        <div class="card">
+          <h3>Molecular biology</h3>
+          <ul class="chips"><li>RNA extraction</li><li>cDNA synthesis</li><li>RT-PCR</li><li>Western blotting</li><li>Immunofluorescence</li></ul>
+        </div>
+        <div class="card">
+          <h3>Analytical chemistry</h3>
+          <ul class="chips"><li>GC-MS</li><li>FT-IR</li><li>UV-Vis spectroscopy</li><li>XRD</li><li>SEM</li></ul>
+        </div>
+        <div class="card">
+          <h3>Research &amp; communication</h3>
+          <ul class="chips"><li>Experimental design</li><li>Scientific presentation</li><li>Manuscript preparation</li><li>Literature review</li></ul>
+        </div>
+        <div class="card">
+          <h3>Languages</h3>
+          <ul class="chips"><li>Vietnamese (native)</li><li>English (IELTS Academic 7.0)</li></ul>
+        </div>
+        <div class="card">
+          <h3>Software &amp; tools</h3>
+          <ul class="chips"><li>SPSS</li><li>R</li><li>Microsoft Word</li><li>Excel</li><li>PowerPoint</li><li>Canva</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="awards" aria-labelledby="awards-h">
+      <h2 id="awards-h">Awards</h2>
+      <p class="note">All awards listed below are merit-based.</p>
+      <ul class="awards">
+        <li><span class="award-name">SRDm Scholarship for Research &amp; Development</span><span class="date">2023 – 2026</span><span class="award-by">Dongguk University</span></li>
+        <li><span class="award-name">Award for Excellent Academic Results and Leadership</span><span class="date">2022</span><span class="award-by">VNU University of Science</span></li>
+        <li><span class="award-name">Five-Good Student Award</span><span class="date">2021</span><span class="award-by">Vietnam Students' Association, Hanoi</span></li>
+        <li><span class="award-name">Encouragement Scholarship for Outstanding Academic Performance (×3)</span><span class="date">2018 – 2022</span><span class="award-by">VNU University of Science</span></li>
+        <li><span class="award-name">Valedictorian</span><span class="date">2018</span><span class="award-by">Thai Phien High School</span></li>
+      </ul>
+    </section>
+
+    <section id="references" aria-labelledby="references-h">
+      <h2 id="references-h">References</h2>
+      <div class="refs">
+        <div class="card">
+          <h3>Prof. Soyoung Kim</h3>
+          <p>Head, Department of Pharmacology, College of Medicine, Dongguk University, Gyeongju, Republic of Korea</p>
+        </div>
+        <div class="card">
+          <h3>Prof. Nguyen Thi Minh Thu</h3>
+          <p>Deputy Head, Department of Petrochemistry, Faculty of Chemistry, VNU University of Science, Hanoi, Vietnam</p>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:1rem;">Contact details for references are available on request.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Dao Hai Yen</span>
+      <a href="mailto:haiyenrx@gmail.com">haiyenrx@gmail.com</a>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var meta = document.querySelector('meta[name="theme-color"]');
+      var colors = { light: "#fbfaf7", navy: "#0f1a2e", pink: "#fff6f8" };
+      var buttons = document.querySelectorAll("[data-set-theme]");
+
+      function apply(theme) {
+        root.setAttribute("data-theme", theme);
+        if (meta) meta.setAttribute("content", colors[theme]);
+        buttons.forEach(function (b) {
+          b.setAttribute("aria-pressed", String(b.getAttribute("data-set-theme") === theme));
+        });
+      }
+
+      buttons.forEach(function (b) {
+        b.addEventListener("click", function () {
+          var theme = b.getAttribute("data-set-theme");
+          apply(theme);
+          try { localStorage.setItem("theme", theme); } catch (e) {}
+        });
+      });
+
+      apply(root.getAttribute("data-theme") || "light");
+    })();
+  </script>
+</body>
+</html>

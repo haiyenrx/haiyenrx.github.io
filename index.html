@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="lavender">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,15 +11,15 @@
   <meta property="og:title" content="Hai Yen Dao · Pharmacology Researcher">
   <meta property="og:description" content="Anticancer drug discovery, target identification, and mechanism-of-action studies in radioresistant breast cancer.">
   <meta property="og:url" content="https://haiyenrx.github.io/">
-  <meta name="theme-color" content="#0a1020">
+  <meta name="theme-color" content="#fff6f9">
   <script>
     /* Apply the saved theme before first paint to avoid a flash of the wrong colors. */
     (function () {
       var t = null;
       try { t = localStorage.getItem("theme"); } catch (e) {}
-      if (t !== "navy" && t !== "lavender") {
-        if (t !== null) { try { localStorage.setItem("theme", "navy"); } catch (e) {} }
-        t = "navy";
+      if (t !== "pink" && t !== "navy" && t !== "lavender") {
+        if (t !== null) { try { localStorage.setItem("theme", "pink"); } catch (e) {} }
+        t = "pink";
       }
       document.documentElement.setAttribute("data-theme", t);
     })();
@@ -38,8 +38,33 @@
        Each theme pairs a primary accent with a secondary accent for gradients.
        --accent-ink is a darker/lighter variant used for text on --accent-soft. */
 
-    /* Navy (default): deep navy with electric blue + violet */
-    :root, [data-theme="navy"] {
+    /* Pastel Pink (default): rose + lavender on blush */
+    :root, [data-theme="pink"] {
+      --bg: #fff6f9;
+      --surface: #ffffff;
+      --text: #2a1520;
+      --muted: #74566a;
+      --line: #f3dae4;
+      --accent: #c2185b;
+      --accent-2: #7c4dff;
+      --accent-ink: #9d174d;
+      --accent-soft: #fde5ef;
+      --highlight: #6d28d9;
+      --on-accent: #ffffff;
+      --chip: #fff0f5;
+      --nav-bg: rgba(255, 246, 249, .82);
+      --glow-1: rgba(236, 72, 153, .20);
+      --glow-2: rgba(124, 77, 255, .16);
+      --name-from: #2a1520;
+      --name-to: #c2185b;
+      --shadow-sm: 0 1px 2px rgba(42, 21, 32, .04), 0 4px 14px rgba(194, 24, 91, .06);
+      --shadow-md: 0 2px 6px rgba(42, 21, 32, .06), 0 16px 36px rgba(194, 24, 91, .12);
+      color-scheme: light;
+    }
+    /* Scoped to pink so it does not leak via :root into themes that fall back to --highlight. */
+    [data-theme="pink"] { --badge-3: #d9480f; /* coral: --highlight is too close to --accent-2 here */ }
+    /* Navy: deep navy with electric blue + violet */
+    [data-theme="navy"] {
       --bg: #0a1020;
       --surface: #111a30;
       --text: #e9eef8;
@@ -236,6 +261,7 @@
     .theme-options .check { margin-left: auto; width: .9rem; height: .9rem; visibility: hidden; }
     .theme-options button[aria-checked="true"] .check { visibility: visible; }
     .swatch { width: 1rem; height: 1rem; border-radius: 50%; flex: none; box-shadow: inset 0 0 0 1px rgba(127, 127, 127, .35); }
+    .swatch.pink { background: conic-gradient(from 200deg, #c2185b, #7c4dff, #fde5ef 75%, #c2185b); }
     .swatch.navy { background: conic-gradient(from 200deg, #5eb1ff, #a78bfa, #0a1020 75%, #5eb1ff); }
     .swatch.lavender { background: conic-gradient(from 200deg, #6d4fc2, #4f7be0, #ede8fb 75%, #6d4fc2); }
 
@@ -495,11 +521,12 @@
     </ul>
     <div class="theme-menu">
       <button type="button" class="theme-toggle" id="theme-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="theme-options">
-        <span class="swatch navy" id="theme-current" aria-hidden="true"></span>
-        <span class="visually-hidden">Color theme: </span><span id="theme-name" class="visually-hidden">Navy</span>
+        <span class="swatch pink" id="theme-current" aria-hidden="true"></span>
+        <span class="visually-hidden">Color theme: </span><span id="theme-name" class="visually-hidden">Pastel Pink</span>
         <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
       </button>
       <ul class="theme-options" id="theme-options" role="menu" aria-labelledby="theme-toggle" hidden>
+        <li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-set-theme="pink"><span class="swatch pink" aria-hidden="true"></span>Pastel Pink<svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></li>
         <li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-set-theme="navy"><span class="swatch navy" aria-hidden="true"></span>Navy<svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></li>
         <li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-set-theme="lavender"><span class="swatch lavender" aria-hidden="true"></span>Lavender<svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></button></li>
       </ul>
@@ -678,8 +705,8 @@
     (function () {
       var root = document.documentElement;
       var meta = document.querySelector('meta[name="theme-color"]');
-      var colors = { navy: "#0a1020", lavender: "#f7f5fd" };
-      var names = { navy: "Navy", lavender: "Lavender" };
+      var colors = { pink: "#fff6f9", navy: "#0a1020", lavender: "#f7f5fd" };
+      var names = { pink: "Pastel Pink", navy: "Navy", lavender: "Lavender" };
       var toggle = document.getElementById("theme-toggle");
       var menu = document.getElementById("theme-options");
       var current = document.getElementById("theme-current");
@@ -733,7 +760,7 @@
         if (!menu.hidden && !e.target.closest(".theme-menu")) close(false);
       });
 
-      apply(colors[root.getAttribute("data-theme")] ? root.getAttribute("data-theme") : "navy");
+      apply(colors[root.getAttribute("data-theme")] ? root.getAttribute("data-theme") : "pink");
     })();
 
     /* Scroll-spy: highlight the nav link for the section currently in view */
